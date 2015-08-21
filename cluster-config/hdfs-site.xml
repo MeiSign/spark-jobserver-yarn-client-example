@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!--
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+  <property>
+  	<name>dfs.permissions.superusergroup</name>
+  	<value>admins</value>
+  </property>
+  <property>
+    <name>dfs.datanode.max.xcievers</name>
+    <value>4096</value>
+  </property>
+  <property>
+    <name>dfs.federation.nameservices</name>
+    <value>hadoopHDFSCluster</value>
+  </property>
+  <property>
+    <name>dfs.ha.namenodes.hadoopHDFSCluster</name>
+    <value>nameNode1,nameNode2</value>
+  </property>
+  <property>
+    <name>fs.defaultFS</name>
+    <value>hdfs://hadoopHDFSCluster/</value>
+  </property>
+  <property>
+    <name>dfs.namenode.rpc-address.hadoopHDFSCluster.nameNode1</name>
+    <value>node1:8020</value>
+  </property>
+  <property>
+    <name>dfs.namenode.rpc-address.hadoopHDFSCluster.nameNode2</name>
+    <value>node2:8020</value>
+  </property>
+  <property>
+    <name>dfs.namenode.http-address.hadoopHDFSCluster.nameNode1</name>
+    <value>node1:50070</value>
+  </property>
+  <property>
+    <name>dfs.namenode.http-address.hadoopHDFSCluster.nameNode2</name>
+    <value>node2:50070</value>
+  </property>
+  <property>
+    <name>dfs.federation.nameservices</name>
+    <value>hadoopHDFSCluster</value>
+  </property>
+  <property>
+    <name>dfs.client.failover.proxy.provider.hadoopHDFSCluster</name>
+    <value>org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider</value>
+  </property>
+  <property>
+    <name>dfs.webhdfs.enabled</name>
+    <value>true</value>
+  </property>
+  <!-- Hue WebHDFS proxy user setting -->
+  <property>
+    <name>hadoop.proxyuser.hue.hosts</name>
+    <value>*</value>
+  </property>
+  <property>
+    <name>hadoop.proxyuser.hue.groups</name>
+    <value>*</value>
+  </property>
+  <!-- Oozie proxy user setting -->
+  <property>
+    <name>hadoop.proxyuser.oozie.hosts</name>
+    <value>*</value>
+  </property>
+  <property>
+    <name>hadoop.proxyuser.oozie.groups</name>
+    <value>*</value>
+  </property>
+  <property>
+    <name>dfs.replication</name>
+    <value>3</value>
+  </property>
+  <property>
+    <name>dfs.replication.max</name>
+    <value>512</value>
+  </property>
+  <property>
+    <name>dfs.namenode.replication.min</name>
+    <value>1</value>
+  </property>
+</configuration>
